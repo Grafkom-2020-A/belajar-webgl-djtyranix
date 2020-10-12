@@ -4,10 +4,19 @@ function main()
     var gl = canvas.getContext("webgl");
 
     //Vertices of a Triangle
+    // var vertices = [
+    //     -0.5, 0.5,      //Point A
+    //     -0.5, -0.5,     //Point B
+    //     0.5, -0.5       //Point C
+    // ];
+
     var vertices = [
         -0.5, 0.5,      //Point A
         -0.5, -0.5,     //Point B
-        0.5, -0.5       //Point C
+        -0.5, -0.5,     //Point B
+        0.5, -0.5,       //Point C
+        0.5, -0.5,      //Point C
+        -0.5, 0.5       //Point A
     ];
 
     var positionBuffer = gl.createBuffer();
@@ -41,8 +50,8 @@ function main()
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
-    var primitive = gl.POINTS;
+    var primitive = gl.LINES;
     var offset = 0;
-    var count = 3;
+    var count = 6;
     gl.drawArrays(primitive, offset, count);
 }
