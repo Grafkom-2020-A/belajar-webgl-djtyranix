@@ -10,5 +10,20 @@
         Your browser does not support HTML5.
     </canvas>
     <script type="text/javascript" src="main.js"></script>
+    <script id="vertexShaderSource">
+        attribute vec2 a_Pos;
+
+        void main()
+        {
+            gl_Position = vec4(a_Pos, 0.0, 1.0);
+            gl_PointSize = 20.0;
+        }
+    </script>
+    <script id="fragmentShaderSource">
+        void main()
+        {
+            gl_FragColor = vec4(0.0, 0.803921568627451, 1.0, 1.0);
+        }
+    </script>
 </body>
 </html>
